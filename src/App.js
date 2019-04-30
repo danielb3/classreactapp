@@ -2,10 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title';
+import Menu from './components/Menu'
 import posts from './posts';
 
-function App() {
-
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+render() {
   return (
     <div className="container-fluid">
       <div className="row">
@@ -22,5 +26,7 @@ function App() {
   
   );
 }
+}
+  
 
 export default App;

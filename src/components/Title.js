@@ -1,27 +1,33 @@
 import React from 'react';
 import '../App.css';
+import App from '../App'
 
 class Title extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { favorite: "Click to add to favorites" };
+        this.state = {
+            favorite: '\u2764',
+            active: "grey",
+            count: 0
+        };
         this.handleClick = this.handleClick.bind(this);
       }
 
       handleClick(id) {
-            if (this.state.favorite == "Click to add to favorites") {
+            if (this.state.active == "grey") {
                 this.setState({
-                    favorite: "Favorite"
+                    favorite: '\u2764',
+                    active: "red",
+                    count: 1
                 });
-                    console.log("true");
             } else {
                 this.setState({
-                    favorite: "Click to add to favorites"
+                    favorite: '\u2764',
+                    active: "grey",
+                    count: 0
                 });
-                    console.log("false");
             }
-            
-        }
+        }        
 
     render() {
         
@@ -29,8 +35,8 @@ class Title extends React.Component {
         return (
             <div>
                 <h3> {title} </h3>
-                <p> {body} </p>
-                <button className="btn btn-primary" onClick={this.handleClick}>{this.state.favorite}</button>
+                <p><i> {body} </i></p>
+                <button className="btn btn-primary" style={{"background":this.state.active}} onClick={this.handleClick}>{this.state.favorite}</button>
             </div>
           );
       }
