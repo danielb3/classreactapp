@@ -1,21 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Title from './components/Title'
+import Title from './components/Title';
+import posts from './posts';
 
 function App() {
-  let user = {
-    name: "Sam",
-    shows: [
-      'The Big Bang Theory',
-      'Modern Family',
-      'NCIS'
-    ]
-  }
+
   return (
-    <div>
-      <Title name={user.name} shows={user.shows}/>
+    <div className="container-fluid">
+      <div className="row">
+        
+          {posts.map((p, i) => {
+            return (
+              <div className="col-md-4" style={{padding: "10px"}}>
+              <Title title = {p.title} body = {p.body} id = {p.id} />
+              </div>
+        )
+      })}
+      </div>
     </div>
+  
   );
 }
 
