@@ -9,17 +9,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   };
+  handleStateChange = (count) => {
+    console.log("count", count);
+  }
 render() {
-  const {count} = this.props;
+  const {count} = 3;
+  
   return (
     <div className="container-fluid">
     <Menu total = {count} />
       <div className="row">
-        <h1>{this.onUpdate.bind(this)}</h1>
+        
           {posts.map((p, i) => {
             return (
               <div className="col-md-4" style={{padding: "10px"}}>
-              <Title title = {p.title} body = {p.body} id = {p.id} />
+              <Title title = {p.title} body = {p.body} id = {p.id} handleStateChange={this.handleStateChange} />
               </div>
         )
       })}
@@ -28,7 +32,7 @@ render() {
   
   );
 }
-onUpdate (data) { this.setState({ data }) }
+
 }
   
 

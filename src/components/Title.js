@@ -21,7 +21,7 @@ class Title extends React.Component {
                     active: "red",
                     count: this.state.count+1
                 });
-                
+                this.props.handleStateChange(this.state.count);
                 console.log(this.state.count)
             } else {
                 this.setState({
@@ -29,7 +29,7 @@ class Title extends React.Component {
                     active: "grey",
                     count: this.state.count-1
                 });
-                
+                this.props.handleStateChange(this.state.count);
                 console.log(this.state.count)
             }
             
@@ -40,7 +40,7 @@ class Title extends React.Component {
         const {title, body, id} = this.props;
         return (
             <div>
-                <Menu total={this.state.count} />
+                {/* <Menu total={this.state.count} /> */}
                 <h3> {title} </h3>
                 <p><i> {body} </i></p>
                 <button className="btn btn-primary" style={{"background":this.state.active}} onClick={this.handleClick}>{this.state.favorite}</button>
