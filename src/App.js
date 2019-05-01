@@ -8,12 +8,14 @@ import posts from './posts';
 class App extends React.Component {
   constructor(props) {
     super(props);
-  }
+  };
 render() {
+  const {count} = this.props;
   return (
     <div className="container-fluid">
+    <Menu total = {count} />
       <div className="row">
-        
+        <h1>{this.onUpdate.bind(this)}</h1>
           {posts.map((p, i) => {
             return (
               <div className="col-md-4" style={{padding: "10px"}}>
@@ -26,6 +28,7 @@ render() {
   
   );
 }
+onUpdate (data) { this.setState({ data }) }
 }
   
 

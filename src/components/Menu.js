@@ -1,11 +1,13 @@
 import React from 'react';
 import '../App.css';
+import Title from './Title';
 
 
 class Menu extends React.Component {
     constructor(props) {
         super(props);
-    }
+    };
+
     render() {
         const {total} = this.props;
         return (
