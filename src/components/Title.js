@@ -1,7 +1,5 @@
 import React from 'react';
 import '../App.css';
-import App from '../App'
-import Menu from './Menu'
 
 class Title extends React.Component {
     constructor(props) {
@@ -9,27 +7,51 @@ class Title extends React.Component {
         this.state = {
             favorite: '\u2764',
             active: "grey",
-            count: 0
+            count: 1
         };
         this.handleClick = this.handleClick.bind(this);
       }
 
+      increment() {
+        this.setState(prevState => ({ count: prevState.count + 1 }), this.loadData)
+        // ((state) => {
+        //     return {count: 1}
+        //   });
+        
+        // this.setState(prevState => ({
+        //     count: 1,
+        // }), this.loadData)
+      }
+
+      decrement() {
+        this.setState(prevState => ({ count: prevState.count - 1 }), this.loadData)
+        // ((state) => {
+        //     return {count: 0}
+        //   });
+        
+        // this.setState(prevState => ({
+        //     count: -1,
+        // }), this.loadData)
+      }
+
       handleClick(id) {
-            if (this.state.active == "grey") {
+            if (this.state.active === "grey") {
                 this.setState({
                     favorite: '\u2764',
                     active: "red",
-                    count: this.state.count+1
+                    // count: this.state.count+1
                 });
                 this.props.handleStateChange(this.state.count);
+                this.increment();
                 console.log(this.state.count)
             } else {
                 this.setState({
                     favorite: '\u2764',
                     active: "grey",
-                    count: this.state.count-1
+                    // count: this.state.count+1
                 });
                 this.props.handleStateChange(this.state.count);
+                this.decrement();
                 console.log(this.state.count)
             }
             
@@ -37,7 +59,7 @@ class Title extends React.Component {
 
     render() {
         
-        const {title, body, id} = this.props;
+        const {title, body} = this.props;
         return (
             <div>
                 {/* <Menu total={this.state.count} /> */}

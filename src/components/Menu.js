@@ -1,12 +1,9 @@
 import React from 'react';
 import '../App.css';
-import Title from './Title';
+
 
 
 class Menu extends React.Component {
-    constructor(props) {
-        super(props);
-    };
 
     render() {
         const {total} = this.props;
@@ -19,7 +16,7 @@ class Menu extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Favorites =<span>{total}</span></a>
+                        <a className="nav-link" href="#">Favorites = <span>{total}</span></a>
                     </li>
                     </ul>
                 </div>
