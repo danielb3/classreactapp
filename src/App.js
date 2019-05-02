@@ -24,20 +24,21 @@ class App extends React.Component {
   
 render() {
   return (
-    <div className="container-fluid">
+    <div>
     <Menu total = {this.state.countA} />
+    <div className="container-fluid">
       <div className="row">
         
-          {posts.map((p, i) => {
+          {posts.slice(0, 100).map((p, i) => {
             return (
               <div className="col-md-4" style={{padding: "10px"}} key={i}>
-              <Title title = {p.title} body = {p.body} id = {p.id} handleStateChange={this.handleStateChange} />
+              <Title title = {p.quoteText} body = {p.quoteAuthor} handleStateChange={this.handleStateChange} />
               </div>
         )
       })}
       </div>
     </div>
-  
+  </div>
   );
 }
 

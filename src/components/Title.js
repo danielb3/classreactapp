@@ -5,7 +5,7 @@ class Title extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            favorite: '\u2764',
+            favorite: 'Add to Favorites',
             active: "grey",
             count: 1
         };
@@ -46,7 +46,7 @@ class Title extends React.Component {
                 console.log(this.state.count)
             } else {
                 this.setState({
-                    favorite: '\u2764',
+                    favorite: 'Add to Favorites',
                     active: "grey",
                     // count: this.state.count+1
                 });
@@ -61,10 +61,10 @@ class Title extends React.Component {
         
         const {title, body} = this.props;
         return (
-            <div>
+            <div className="quotes">
                 {/* <Menu total={this.state.count} /> */}
-                <h3> {title} </h3>
-                <p><i> {body} </i></p>
+                <h3><i> {title} </i></h3>
+                <p>-{body}</p>
                 <button className="btn btn-primary" style={{"background":this.state.active}} onClick={this.handleClick}>{this.state.favorite}</button>
             </div>
           );

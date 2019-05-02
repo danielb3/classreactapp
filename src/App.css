@@ -2,7 +2,31 @@
   text-align: center;
 }
 
+.menuName {
+  font-size: 20px;
+  color: white !important;
+}
+
+.menuLink {
+  font-size: 20px;
+  color: white !important;
+  margin-right: 20px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.menu {
+  position: fixed;
+  width: 100%;
+  background: red !important;
+  opacity: 2.0 !important;
+  color: white !important;
+  z-index: 100;
+}
+
+.quotes {
+  margin-top: 75px;
 }
