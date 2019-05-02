@@ -65,7 +65,10 @@ class Title extends React.Component {
                 {/* <Menu total={this.state.count} /> */}
                 <h3><i> {title} </i></h3>
                 <p>-{body}</p>
-                <button className="btn btn-primary" style={{"background":this.state.active}} onClick={this.handleClick}>{this.state.favorite}</button>
+                <button className="btn btn-primary" style={{"background":this.state.active}} onClick={this.handleClick}>{this.state.favorite}</button> &nbsp;&nbsp;&nbsp;
+               
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-text={`${title} by ${body}`} data-size="large" data-lang="en" data-show-count="false">Tweet</a>
+                
             </div>
           );
       }

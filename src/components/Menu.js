@@ -9,7 +9,7 @@ class Menu extends React.Component {
         const {total} = this.props;
         return (
             <nav className="menu navbar navbar-expand-lg navbar-light bg-light">
-                <a className="menuName navbar-brand" href="#">Favorite Quotes App</a>
+                <a className="menuName navbar-brand" href="#">Quote Me</a>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="menuLinkUl navbar-nav ">
                     <li className="nav-item active">
